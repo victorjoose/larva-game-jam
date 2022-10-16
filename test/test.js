@@ -1,8 +1,10 @@
-const loadText = document.querySelectorAll('.loading-text')
-const bg = document.querySelector('.bg')
+import { getDogImg } from "./getImage.js";
+
+const loadTexts = document.querySelectorAll('.loading-text')
+const boxes = document.querySelectorAll('.box')
 
 let load = 0;
-let int = setInterval(blurring, 15)
+let int = setInterval(blurring, 20)
 
 function blurring() {
     load++
@@ -11,12 +13,14 @@ function blurring() {
         clearInterval(int)
     }
 
-    loadText.forEach((text) => {
+    loadTexts.forEach((text) => {
         text.innerText = `${load}%`
         text.style.opacity = scale(load, 0, 100, 1, 0)
     })
-    
-    bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+
+    boxes.forEach((box) => {
+        box.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+    })
 }
 
 // from stackoverflow
