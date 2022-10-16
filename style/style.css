@@ -1,7 +1,37 @@
-*{padding: 0; margin: 0; position: relative;}
+@font-face {
+    font-family: pixel;
+    src: url('fonts/pixelart/04B_30__.TTF');
+  }
 
-body{ width: 100vw; height: 100vh; overflow: hidden;}
+*{padding: 0; margin: 0; position: relative; font-family: pixel;}
+
+body{ width: 100vw; height: 100vh; overflow: hidden; background-color: black;}
 
 *{
-    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
+    cursor: url(https://cdn.custom-cursor.com/db/pointer/32/Eldest_Pointer.png) , pointer !important;
+    cursor: url(https://cdn.custom-cursor.com/db/cursor/32/Eldest_Cursor.png) , default !important;
+}
+
+#app {
+	width: 100vw;
+	height: 100vh;
+    background-color: transparent;
+}
+
+#background {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.effect-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+    opacity: 0;
+    transition: 2s;
+}
+
+.effect-background-active{
+    opacity: 1;
 }

@@ -1,3 +1,41 @@
-#computed{
+#computed {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
 
+#computed::after {
+	content: '';
+	width: 300px;
+	position: absolute;
+	left: 50%;
+	height: 100vh;
+	background: #2f2f2f;
+	top: 50%;
+	z-index: 0;
+	transform: translate(-50%);
+}
+
+#computed-screen {
+	width: 90%;
+	height: 90%;
+	overflow: hidden;
+	background: black;
+	max-width: 720px;
+	box-shadow: -15px 0 0 0 #979797, 15px 0 0 0 #929292, 0 -15px 0 0 #737373, 0 15px 0 0 #6c6c6c;
+    z-index: 1;
+}
+.screen-border {
+	border: 41px solid #cecece;
+	width: calc(100% - 80px);
+	height: calc(100% - 80px);
+}
+
+.screen-content {
+	max-height: calc(100% - 20px);
+	background: black;
+	color: #26cf26;
+	padding: 10px;
 }

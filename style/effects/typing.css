@@ -1,0 +1,42 @@
+/*
+
+https://codepen.io/rusjames/pen/nrVBPN
+*/
+
+p{    
+    color: lime; 
+    font-size: 20px;
+    margin: 10px 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 30em;
+}
+
+.type{
+animation: type 4s steps(60, end); 
+}
+
+/*.type:nth-child(2){
+animation: type 4s steps(60, end) 4s ;
+}*/
+
+.type a{
+color: lime;
+text-decoration: none;
+}
+
+.type span, .cursor_console{
+animation: blink 1s infinite;
+}
+
+@keyframes type{ 
+from {display: block; width: 0; } 
+} 
+
+@keyframes blink{
+to{opacity: .0;}
+}
+
+.type::selection{
+background: black;
+}
