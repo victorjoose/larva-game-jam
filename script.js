@@ -1,7 +1,16 @@
-const square1 = document.getElementById('square-1');
-const square2 = document.getElementById('square-2');
-const square3 = document.getElementById('square-3');
-const square4 = document.getElementById('square-4');
+import { getDogImg, getCatImg, getRandomImg } from "../test/getImage.js";
+
+let catImg = await getCatImg();
+const square1 = document.getElementById('img1');
+square1.querySelector('img').src = catImg[0].url;
+
+const square2 = document.getElementById('img2');
+const square3 = document.getElementById('img3');
+const square4 = document.getElementById('img4');
+
+
+
+
 
 let selectedSquare = 0;
 let score = 0;
