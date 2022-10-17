@@ -1,0 +1,27 @@
+{
+  "name": "reCATcha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "electron .",
+    "build": "electron-packager"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://victorjoose: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@github.com/victorjoose/larva-game-jam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorjoose/larva-game-jam/issues"
+  },
+  "homepage": "https://github.com/victorjoose/larva-game-jam#readme",
+  "devDependencies": {
+    "electron": "^21.1.1"
+  },
+  "dependencies": {
+    "electron-packager": "^16.0.0"
+  }
+}
