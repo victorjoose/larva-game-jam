@@ -4,7 +4,7 @@ let prox = -1
 const pressEnter = document.getElementById('pressEnter')
 const comecarGame = document.getElementById('comecarGame')
 
-const songKeyboard = new Audio('../../../audio/keyboard.mp3'); 
+const songKeyboard = new Audio('../../../audio/keyboard.mp3');
 
 const removeAllClassName = (el, input, classe) => {
     const elems = el.querySelectorAll(input);

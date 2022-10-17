@@ -161,10 +161,19 @@
 	animation: blink2 3s infinite;
 }
 
+#game-time {
+	color: red;
+	font-size: 21px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	top: 10px;
+}
+
+
 @keyframes blink2{
 	0% {opacity: 1;}
 	50% {opacity: 0;}
 	100% {opacity: 1;}
-
 }
 	

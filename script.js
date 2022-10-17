@@ -1,6 +1,10 @@
 import { getDogImg, getCatImg, getRandomImg } from "./getImage.js";
 
 const song = new Audio('./audio/QuincasMoreira-RobotCity.mp3'); 
+const songGameStart = new Audio('./audio/game-start.mp3');
+const songGameOver = new Audio('./audio/game-over.mp3');
+const songHurt = new Audio('./audio/hurt.mp3');
+songHurt.volume = 0.1
 
 const square1 = document.getElementById('img1');
 const square2 = document.getElementById('img2');
@@ -74,13 +78,31 @@ const setEscolha = async () =>{
     loadingGame(false)
 }
 
+function receberDano () {
+    if(hurtHeart()){
+        song.muted = true
+        songGameOver.play()
+
+        let page = document.getElementById('run')
+        let pageNext = document.getElementById('gameover')
+        page.classList.remove('screen-page-active')
+        pageNext.classList.add('screen-page-active')
+        controllerTimer = false
+    }else{            
+        songHurt.muted = false
+        songHurt.play()
+        resetTime ()
+    }
+}
+
 const nextTest = document.getElementById('nextTest')
 nextTest.addEventListener('click', () => {
     if(mark == -1 ) return
     
     if(mark){
-        hurtHeart()
+        receberDano()
     }else{
+        resetTime ()
         addPonts(1000)
         upLevel()
     }
@@ -94,7 +116,7 @@ function playSong() {
     song.play();
     song.muted = false;
     song.loop = true;
-    song.volume = 0.05;
+    song.volume = 0.1;
 }
 
 function start() {
@@ -102,14 +124,43 @@ function start() {
     setEscolha();
 }
 
-const startGame = document.getElementById('comecarGame')
 
+const retry = document.getElementById('retry')
+retry.addEventListener('click', () => {
+    songGameStart.muted = false
+    song.muted = false
+    let page = document.getElementById('start')
+    let pageNext = document.getElementById('run')
+    page.classList.remove('screen-page-active')
+    pageNext.classList.add('screen-page-active')
+    songGameStart.play()
+    resetHeart()
+    setEscolha()
+    controllerTimer = true
+    resetTime()
+})
+
+const startGame = document.getElementById('comecarGame')
 startGame.addEventListener('click', () => {
+    //songHurt.loop = true
+    songGameStart.play()
     playSong();
     setEscolha();
+    resetTime ()
 
     let page = document.getElementById('start')
     let pageNext = document.getElementById('run')
     page.classList.remove('screen-page-active')
     pageNext.classList.add('screen-page-active')
+    controllerTimer = true
 })
+
+var controllerTimer = false
+const myInterval = setInterval(() => {
+    if(controllerTimer){
+        if(timerlimit()){
+            receberDano()        
+            setEscolha()
+        }
+    }    
+}, 1000);

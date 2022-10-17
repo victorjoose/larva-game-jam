@@ -1,5 +1,5 @@
 const elPoint = document.getElementById('game-pts')
-const maxPoints = 99999
+const maxPoints = 999999999
 let topPoints = 0
 let infinite = false
 
