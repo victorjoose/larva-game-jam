@@ -6,7 +6,7 @@ const text_ =[
 ""
 ]
 
-const element = document.getElementById("text")
+const elementText = document.getElementById("text")
 
 const removeAllClassName = (el, input, classe) => {
     const elems = el.querySelectorAll(input);
@@ -27,7 +27,7 @@ const createParagraph = (el) =>{
 
 
 let worlds = []
-var pElement = createParagraph(element)
+var pElement = createParagraph(elementText)
 const frameLooper = () => {    
     // removeAllClassName(element, '.type', 'type')
     worlds = (worlds.length == 0 && text_.length > 0) 
@@ -45,7 +45,7 @@ const frameLooper = () => {
 	}
 
     if( worlds.length == 0 ){
-        pElement = createParagraph(element)
+        pElement = createParagraph(elementText)
         console.log("pulou")
     }
 

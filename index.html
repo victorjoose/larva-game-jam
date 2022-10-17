@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/computed.css">
-    <link rel="stylesheet" href="style/effects/matrix.css">
-    <link rel="stylesheet" href="style/effects/typing.css">     
+    <link rel="stylesheet" href="style/game-screen.css">    
+    <link rel="stylesheet" href="style/effects/matrix/matrix.css">
+    <link rel="stylesheet" href="style/effects/typing/typing.css">
     <title>Game-Jam</title>
 </head>
 <body>
@@ -16,7 +17,44 @@
             <div id="computed-screen">
                 <div class="screen-border">
                     <div class="screen-content">
-                        <div id="text"></div>
+                        <div class="screen-page">
+                            <div id="text"></div>
+                        </div>
+                        <div class="screen-page screen-page-active">
+                            <div id="game">
+                                <div class="game-header">
+                                    <div id="game-heart">
+                                        <div class="heart"> 
+                                            <img src="images/healt/healt-default.png">
+                                        </div>
+                                        <div class="heart">
+                                            <img src="images/healt/healt-default.png">
+                                        </div>
+                                        <div class="heart">
+                                            <img src="images/healt/healt-default.png">
+                                        </div>
+                                    </div>
+                                    <div id="game-pts">1000</div>
+                                </div>
+                                <div class="game-content">
+                                    <div class="game-text"> Onde esta o Gato? </div>
+                                    <div class="game-images">
+                                        <div id="img1" class="game-image"><img src="images/healt/healt-default.png"></div>
+                                        <div id="img2" class="game-image"><img src="images/healt/healt-default.png"></div>
+                                        <div id="img3" class="game-image"><img src="images/healt/healt-default.png"></div>
+                                        <div id="img4" class="game-image"><img src="images/healt/healt-default.png"></div>
+                                    </div>
+                                </div>
+                                <div class="game-footer">
+                                    <div class="game-profile">
+                                        <img src="images/minds/lvl_1.webp">
+                                    </div>
+                                    <div class="game-btn">
+                                        <button id="nextTest">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -29,9 +67,11 @@
             <canvas id="canv" width="500" height="200"></canvas>
         </div>
     </div>    
-    <script src="style/effects/matrix.js"></script>
-    <script src="style/effects/typing.js"></script>
+    <script src="style/effects/matrix/matrix.js"></script>
+    <script src="style/effects/typing/typing.js"></script>
     <script src="style/effects/background/background.js"></script>
+    <script src="style/effects/points/points.js"></script>
+    <script src="style/effects/heart/heart.js"></script>
     <script src="style/effects/universe/p5.js"></script>
     <script src="style/effects/universe/universe.js"></script>
 </body>

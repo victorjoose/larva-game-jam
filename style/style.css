@@ -7,9 +7,12 @@
 
 body{ width: 100vw; height: 100vh; overflow: hidden; background-color: black;}
 
-*{
-    cursor: url(https://cdn.custom-cursor.com/db/pointer/32/Eldest_Pointer.png) , pointer !important;
+*{    
     cursor: url(https://cdn.custom-cursor.com/db/cursor/32/Eldest_Cursor.png) , default !important;
+}
+
+button, a, .pointer, .game-image, .game-image img  {
+    cursor: url(https://cdn.custom-cursor.com/db/pointer/32/Eldest_Pointer.png) , pointer !important;
 }
 
 #app {

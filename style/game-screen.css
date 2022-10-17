@@ -1,0 +1,131 @@
+#game {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.game-header {
+	display: flex;
+	height: 40px;
+	justify-content: space-between;
+}
+
+.game-content {
+	flex: 1 1 0%;
+	display: flex;
+	flex-direction: column;
+}
+.game-footer {
+	display: flex;
+	height: 100px;
+	justify-content: space-between;
+}
+
+#game-heart {
+	display: flex;
+}
+
+.heart {
+	width: 40px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.heart img {
+	width: 100%;
+}
+
+.heart.hurt img{
+	filter: saturate(0);
+}
+
+#game-pts img {
+	width: 45px;
+}
+
+.game-profile {
+	aspect-ratio: 1 / 1;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-profile img {
+	width: 100%;
+	/* overflow: hidden; */
+}
+
+#game-pts {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+}
+
+.game-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-image img {
+	position: absolute;
+	height: 100%;
+}
+
+.game-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+}
+
+.game-text {
+	padding: 10px;
+}
+
+#img1 {
+    grid-area: img1;
+}
+
+#img2 {
+    grid-area: img2;
+}
+
+#img3 {
+    grid-area: img3;
+}
+
+#img4 {
+    grid-area: img4;
+}
+
+.game-images {
+	display: grid;
+	flex: 1;
+	grid-template-areas: "img1 img2" "img3 img4";
+	padding: 15px;
+	gap: 15px;
+}
+
+.game-image:hover{
+    outline: 5px #26cf26 solid;
+}
+
+.marked {
+    outline: 5px #26cf26 solid;
+}
+
+
+
+#nextTest {
+	height: 50px;
+	width: 100px;
+	background: black;
+	color: #26cf26;
+	border: 5px solid #26cf26;
+}
