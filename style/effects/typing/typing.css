@@ -1,7 +1,44 @@
 /*
-
 https://codepen.io/rusjames/pen/nrVBPN
 */
+
+#start {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.start-button {
+	flex: 1;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+
+#comecarGame {
+	padding: 15px 30px;
+	font-size: 21px;
+	background: transparent;
+	color: #26cf26;
+	border: 5px solid #26cf26;
+    opacity: 0;
+    transition: 2s;
+    z-index: -1;
+}
+
+#comecarGame:hover {
+	background: #0d0d0d;
+	color: #07bd23;
+	border-color: #07bd23;
+}
+
+#pressEnter {
+	text-align: center;
+    animation: blink2 3.5s infinite;
+    margin-bottom: 10px;
+    display: none;
+    opacity: 0;
+}
 
 p, .parag{    
     color: lime; 

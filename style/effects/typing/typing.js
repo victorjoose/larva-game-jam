@@ -1,6 +1,10 @@
 let text_ = []
 let elementText = document.getElementById("text")
 let prox = -1
+const pressEnter = document.getElementById('pressEnter')
+const comecarGame = document.getElementById('comecarGame')
+
+const songKeyboard = new Audio('../../../audio/keyboard.mp3'); 
 
 const removeAllClassName = (el, input, classe) => {
     const elems = el.querySelectorAll(input);
@@ -23,7 +27,9 @@ const createParagraph = (el) =>{
 
 let worlds_ = []
 var pElement = createParagraph(elementText)
-const frameLooper = () => {    
+let finishWorld = false
+const frameLooper = () => {        
+    songKeyboard.muted = false
     // removeAllClassName(element, '.type', 'type')
     worlds_ = (worlds_.length == 0 && text_.length > 0) 
         ? text_.shift().split("") 
@@ -34,8 +40,16 @@ const frameLooper = () => {
     //!letter ? console.log("pulou") : element.innerHTML += letter 
 
 	if (worlds_.length == 0 && text_.length == 0) {
-        pElement.innerHTML += ' <span class="cursor_console">|</span>'         
-        proxPages()
+        finishWorld = true
+        songKeyboard.muted = true
+        if(prox < 3){
+            pressEnter.style.display = 'block'            
+        }else{
+            comecarGame.style.opacity = 1
+            comecarGame.style.zIndex = 1
+        }
+        
+        pElement.innerHTML += ' <span class="cursor_console">|</span>'        
         return
 	}
 
@@ -90,8 +104,11 @@ const fourthPage = () => {
     frameLooper();
 }
 
-const proxPages = () => {
+const proxPages = () => {    
+    
     prox++
+    finishWorld = false
+    pressEnter.style.display = 'none'
     elementText.innerHTML = ""    
     pElement = createParagraph(elementText)
     return (prox == 0) 
@@ -130,7 +147,9 @@ window.addEventListener("keydown", (event) => {
         // Do something for "right arrow" key press.
         break;
       case "Enter":
-        console.log('enter')
+            songKeyboard.play()
+            songKeyboard.loop = true
+            if(finishWorld) proxPages()
         break;
       case "Esc": // IE/Edge specific value
       case "Escape":

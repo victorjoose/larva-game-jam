@@ -11,7 +11,6 @@ const square4 = document.getElementById('img4');
 const array = [square1, square2, square3, square4]
 let escolha = []
 let mark = -1
-
 const allGameImage = document.getElementById('allGameImage')
 const gameImageLoad = document.getElementById('gameImageLoad')
 
@@ -103,4 +102,14 @@ function start() {
     setEscolha();
 }
 
-start()
+const startGame = document.getElementById('comecarGame')
+
+startGame.addEventListener('click', () => {
+    playSong();
+    setEscolha();
+
+    let page = document.getElementById('start')
+    let pageNext = document.getElementById('run')
+    page.classList.remove('screen-page-active')
+    pageNext.classList.add('screen-page-active')
+})

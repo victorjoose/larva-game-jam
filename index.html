@@ -21,8 +21,10 @@
             <div id="computed-screen">                
                 <div class="screen-border">
                     <div class="screen-content">
-                        <div id="start" class="screen-page">
+                        <div id="start" class="screen-page screen-page-active">
                             <div id="text"></div>
+                            <div class="start-button"><button id="comecarGame">Start</button></div>
+                            <div id="pressEnter">pressione ENTER para continuar</div>
                         </div>
                         <div id="gameover" class="screen-page">
                             <div class="gameover-main">
@@ -36,10 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="completed" class="screen-page">
-                            <div id="text"></div>
-                        </div>
-                        <div id="run" class="screen-page screen-page-active">
+                        <div id="run" class="screen-page ">
                             <div id="game">
                                 <div class="game-header">
                                     <div id="game-heart">
@@ -53,7 +52,7 @@
                                             <img src="images/healt/healt-default.png">
                                         </div>
                                     </div>
-                                    <div id="game-pts">1000</div>
+                                    <div id="game-pts">0</div>
                                 </div>
                                 <div class="game-content">
                                     <div class="game-text"> Onde esta o Gato? </div>
@@ -98,6 +97,6 @@
     <script src="style/effects/universe/p5.js"></script>
     <script src="style/effects/universe/universe.js"></script>
     <script type="module" src="script.js"></script>
-    <script type="module" src="getImage.js"></script>
+    <script type="module" src="../test/getImage.js"></script>
 </body>
 </html>
