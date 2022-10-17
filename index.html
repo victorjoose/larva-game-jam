@@ -9,7 +9,8 @@
     <meta http-equiv="Content-Security-Policy" content="https://picsum.photos/"/>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/computed.css">
-    <link rel="stylesheet" href="style/game-screen.css">    
+    <link rel="stylesheet" href="style/game-screen.css">
+    <link rel="stylesheet" href="style/gameover.css">
     <link rel="stylesheet" href="style/effects/matrix/matrix.css">
     <link rel="stylesheet" href="style/effects/typing/typing.css">
     <title>Game-Jam</title>
@@ -17,14 +18,23 @@
 <body>
     <div id="app">        
         <div id="computed">
-            <div id="computed-screen">
+            <div id="computed-screen">                
                 <div class="screen-border">
                     <div class="screen-content">
                         <div id="start" class="screen-page">
                             <div id="text"></div>
                         </div>
                         <div id="gameover" class="screen-page">
-                            <div id="text"></div>
+                            <div class="gameover-main">
+                                <div class="gameover-title">GAME OVER</div>
+                                <div class="gameouver-subtitle">Humano detectado!</div>
+                                <div class="gameover-text">
+                                    Apenas um humano verdadeiro saberia diferenciar uma imagem qualquer com a de um gato!
+                                </div>
+                                <div class="gameover-button">
+                                    <button id="retry">Tentar Novamente</button>
+                                </div>
+                            </div>
                         </div>
                         <div id="completed" class="screen-page">
                             <div id="text"></div>

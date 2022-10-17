@@ -3,13 +3,14 @@
 https://codepen.io/rusjames/pen/nrVBPN
 */
 
-p{    
+p, .parag{    
     color: lime; 
     font-size: 20px;
     margin: 10px 0 0 10px;
     white-space: nowrap;
     overflow: hidden;
     width: 30em;
+    white-space: break-spaces;
 }
 
 .type{

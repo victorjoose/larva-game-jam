@@ -82,8 +82,9 @@ nextTest.addEventListener('click', () => {
     }else{
         addPonts(1000)
         upLevel()
-        setEscolha()
     }
+    
+    setEscolha()
     marked()
     mark = -1
 })
@@ -148,6 +149,5 @@ function restart() {
 function start(){
     setEscolha()
 }
-
 
 start()
