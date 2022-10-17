@@ -86,6 +86,7 @@
 
 .game-text {
 	padding: 10px;
+	z-index: 2;
 }
 
 #img1 {
@@ -120,8 +121,6 @@
     outline: 5px #26cf26 solid;
 }
 
-
-
 #nextTest {
 	height: 50px;
 	width: 100px;
@@ -134,11 +133,12 @@
 }
 
 #allGameImage, #gameImageLoad{
-	opacity: 0;
+	z-index: 0;
+	background-color: black;
 }
 
 .game-show{
-	opacity: 1 !important;
+	z-index: 1 !important;
 }
 
 #gameImageLoad {

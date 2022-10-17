@@ -52,4 +52,4 @@ const frameLooper = () => {
     setTimeout('frameLooper()',100);
 }
 
-frameLooper();
+//frameLooper();

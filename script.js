@@ -24,6 +24,15 @@ const loadingGame = (vl) => {
 }
 
 
+const markedCorrect = () => {
+    mark = true 
+}
+
+const markedIncorrect = () =>{
+    mark = false
+}
+
+
 const setEscolha = async () =>{
     loadingGame(true)
     escolha = [0,0,0,0]
@@ -35,17 +44,15 @@ const setEscolha = async () =>{
     
     const imgRadom = await getRandomImg()
 
-    for(let i =0 ; i < array.length; i++){
-        if (escolha[i] == 1){        
+    for(let i =0 ; i < array.length; i++){        
+        array[i].removeEventListener('click', markedCorrect)
+        array[i].removeEventListener('click', markedIncorrect)
+        if (escolha[i] == 1){
             array[e].querySelector('img').src = imgEscolhida        
-            array[i].addEventListener('click', () => {            
-                mark = i
-            })
+            array[i].addEventListener('click', markedCorrect)
         }else{
             array[i].querySelector('img').src = imgRadom.shift().url
-            array[i].addEventListener('click', () => {
-                mark = i
-            })
+            array[i].addEventListener('click', markedIncorrect)
         }
     }
     loadingGame(false)
@@ -53,31 +60,19 @@ const setEscolha = async () =>{
 
 
 
-const setEventClickImages = () => {
-    for(let i =0 ; i < array.length; i++){
-        if (escolha[i] == 1){            
-            array[i].addEventListener('click', () => {            
-                mark = i
-            })
-        }else{
-            setRadomImg(array[i].querySelector('img'))
-            array[i].addEventListener('click', () => {
-                mark = i
-            })
-        }
-    }
-}
-
-
 
 const nextTest = document.getElementById('nextTest')
 nextTest.addEventListener('click', () => {
-    if(escolha[mark] == 1){
-        console.log('correto')
+    if(mark == -1 ) return
+    
+    if(mark){
+        hurtHeart()
     }else{
-        console.log('erro')
+        addPonts(1000)
         setEscolha()
     }
+
+    mark = -1
 })
 
 let selectedSquare = 0;
@@ -136,3 +131,10 @@ function gameOver() {
 function restart() {  
     // recomeça o jogo
 }
+
+function start(){
+    setEscolha()
+}
+
+
+start()
