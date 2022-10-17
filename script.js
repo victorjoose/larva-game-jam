@@ -1,4 +1,5 @@
 import { getDogImg, getCatImg, getRandomImg } from "./getImage.js";
+const song = new Audio('/audio/QuincasMoreira-RobotCity.mp3'); 
 
 const square1 = document.getElementById('img1');
 const square2 = document.getElementById('img2');
@@ -88,7 +89,10 @@ nextTest.addEventListener('click', () => {
     mark = -1
 })
 
-function start(){
+function start() {
+    song.play();
+    song.loop = true;
+    song.volume = 0.03;
     setEscolha()
 }
 
