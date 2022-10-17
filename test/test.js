@@ -1,7 +1,21 @@
-import { getDogImg } from "./getImage.js";
+import { getDogImg, getCatImg, getRandomImg } from "./getImage.js";
 
 const loadTexts = document.querySelectorAll('.loading-text')
 const boxes = document.querySelectorAll('.box')
+
+let catImg = await getCatImg();
+document.getElementById('box1').src = catImg[0].url;
+
+/*let dogImg = await getDogImg();
+document.getElementById('box2').src = dogImg.message;
+*/
+
+let randomImg = await getRandomImg();
+randomImg.forEach((image) => {
+    console.log(image.url)
+})
+
+
 
 let load = 0;
 let int = setInterval(blurring, 20)
