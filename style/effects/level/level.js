@@ -18,3 +18,9 @@ const upLevel = () => {
         // addInfinitePoints()
     }  
 }
+
+function resetLevel() {
+    const myImg = document.getElementById('myImg')
+    myImg.src = `images/minds/mind1.png`
+    imgmind = 1
+}

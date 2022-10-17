@@ -88,6 +88,8 @@ function receberDano () {
         page.classList.remove('screen-page-active')
         pageNext.classList.add('screen-page-active')
         controllerTimer = false
+        resetLevel()
+        resetPoints()
     }else{            
         songHurt.muted = false
         songHurt.play()
@@ -118,12 +120,6 @@ function playSong() {
     song.loop = true;
     song.volume = 0.1;
 }
-
-function start() {
-    playSong();
-    setEscolha();
-}
-
 
 const retry = document.getElementById('retry')
 retry.addEventListener('click', () => {

@@ -31,3 +31,7 @@ const addInfinitePoints = () => {
     elPoint.innerHTML = "<img src='images/tools/infinite.png'>"
     infinite = true    
 }
+
+function resetPoints() {
+    elPoint.innerHTML = 0;
+}

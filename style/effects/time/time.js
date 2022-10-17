@@ -1,4 +1,4 @@
-var timeSeconds = 10
+var timeSeconds = 9
 const gameTime = document.getElementById('game-time')
 
 function timerlimit (){
@@ -11,5 +11,5 @@ function timerlimit (){
 }
 
 function resetTime () {
-    timeSeconds = 10
+    timeSeconds = 9
 }
