@@ -15,9 +15,10 @@ const addPonts = (vl) => {
 
 const effectAddPoints = () => {
     let point = parseInt(elPoint.innerText)
-    point = Math.min(point + 5, maxPoints)
+    point = Math.min(point + 50, maxPoints)
     elPoint.innerHTML = point
 
+    console.log('a')
     if(point == topPoints || point == maxPoints){
         return;
     }

@@ -47,11 +47,12 @@
 }
 
 .game-profile {
-	aspect-ratio: 1 / 1;
-	padding: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100px - 20px);
 }
 
 .game-profile img {
@@ -114,11 +115,11 @@
 }
 
 .game-image:hover{
-    outline: 5px #26cf26 solid;
+    background-color: #121212;
 }
 
-.marked {
-    outline: 5px #26cf26 solid;
+.game-image-mark{
+	outline: 5px #26cf26 solid;
 }
 
 #nextTest {
@@ -156,4 +157,13 @@
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+	animation: blink2 3s infinite;
 }
+
+@keyframes blink2{
+	0% {opacity: 1;}
+	50% {opacity: 0;}
+	100% {opacity: 1;}
+
+}
+	

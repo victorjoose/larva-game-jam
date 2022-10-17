@@ -8,7 +8,7 @@ const square4 = document.getElementById('img4');
 
 const array = [square1, square2, square3, square4]
 let escolha = []
-let mark = 0
+let mark = -1
 
 const allGameImage = document.getElementById('allGameImage')
 const gameImageLoad = document.getElementById('gameImageLoad')
@@ -23,9 +23,24 @@ const loadingGame = (vl) => {
     }    
 }
 
+const marked = (el) => {
+    const allSquare = document.querySelectorAll('.game-image')
+    for(let i = 0 ; i < allSquare.length ; i++){
+        allSquare[i].classList.remove('game-image-mark')
+    }
 
-const markedCorrect = () => {
-    mark = true 
+    if (!el) return
+    el.classList.add('game-image-mark')
+}
+
+square1.addEventListener('mousedown', () => {marked(square1)})
+square2.addEventListener('mousedown', () => {marked(square2)})
+square3.addEventListener('mousedown', () => {marked(square3)})
+square4.addEventListener('mousedown', () => {marked(square4)})
+
+const markedCorrect = (i) => {
+    mark = true;
+    console.log(i)
 }
 
 const markedIncorrect = () =>{
@@ -48,7 +63,7 @@ const setEscolha = async () =>{
         array[i].removeEventListener('click', markedCorrect)
         array[i].removeEventListener('click', markedIncorrect)
         if (escolha[i] == 1){
-            array[e].querySelector('img').src = imgEscolhida        
+            array[i].querySelector('img').src = imgEscolhida        
             array[i].addEventListener('click', markedCorrect)
         }else{
             array[i].querySelector('img').src = imgRadom.shift().url
@@ -58,9 +73,6 @@ const setEscolha = async () =>{
     loadingGame(false)
 }
 
-
-
-
 const nextTest = document.getElementById('nextTest')
 nextTest.addEventListener('click', () => {
     if(mark == -1 ) return
@@ -69,9 +81,10 @@ nextTest.addEventListener('click', () => {
         hurtHeart()
     }else{
         addPonts(1000)
+        upLevel()
         setEscolha()
     }
-
+    marked()
     mark = -1
 })
 
